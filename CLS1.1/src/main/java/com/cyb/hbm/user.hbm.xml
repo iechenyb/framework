@@ -1,0 +1,74 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC   
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+      
+<hibernate-mapping package="com.cyb.bean">  
+<class name="UserTmp" table="usr">  
+     <!-- <cache usage="read-write"/>  -->
+    <id name="id" type="java.lang.String" column="id_">  
+       <generator class="uuid.hex" />  
+    </id>  
+   <property  
+        name="username"  
+        type="java.lang.String"  
+        column="username"  
+        length="50"  
+    />  
+   <property  
+        name="password"  
+        type="java.lang.String"  
+        column="password"  
+        length="50"  
+    />  
+      <property  
+        name="roleId"  
+        type="java.lang.Long"  
+        column="roleId"  
+        length="1"  
+    />  
+     <property  
+        name="loginstatus"  
+        type="java.lang.Long"  
+        column="loginstatus"  
+        length="1"  
+    />  
+     <property  
+        name="registerTime"  
+        type="java.lang.Long"  
+        column="registerTime"  
+        length="14"  
+    />  
+     <property  
+        name="status"  
+        type="java.lang.Long"  
+        column="status"  
+        length="1"  
+    />  
+     <property  
+        name="phone"  
+        type="java.lang.Long"  
+        column="phone"  
+        length="11"  
+    />  
+    <property  
+        name="email"  
+        type="java.lang.String"  
+        column="email"  
+        length="50"  
+    />  
+</class>  
+
+<!-- <query name="getPDAsByStationId">  
+    from PDA c  
+    where c.stationId = :stationId  
+</query>  
+<query name="getRecordCountByPDANo">  
+    select count(*) as recordCount from PDA c  
+    where c.pdaNo = :pdaNo  
+</query>  
+<query name="deletePDAsByStationId">  
+    delete from PDA c  
+    where c.stationId = :stationId  
+</query>   -->
+</hibernate-mapping>  

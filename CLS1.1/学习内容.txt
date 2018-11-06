@@ -1,0 +1,19 @@
+1 前台ui
+  js,jquery,
+  http://amazeui.org/
+  http://www.runoob.com/angularjs/angularjs-tutorial.html
+2 后台
+  spring mvc
+  hibernate
+  jdbcTemplate
+  servlet 工作原理
+3 数据库
+  mysql链接方式
+    建表sql（ddl）
+    增删该查sql
+    编写*.hbm.xml
+4 两个学习的实例
+  http://ip:port/usr/jsp.cs springmvc请求返回jsp页面带参数
+  http://ip:port/usr/json.cs springmvc请求返回json数据 
+5 统计报表（先了解）
+  echarts             

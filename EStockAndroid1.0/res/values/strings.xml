@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">股往今来</string>
+    <string name="action_settings">刷新</string>
+    <string name="hello_world">Hello world i love you!</string>
+    <string name="login_label_username">用户名</string>
+    <string name="login_username_hint">手机号码或者邮箱</string>
+    <string name="login_label_password">密码</string>
+    <string name="login_label_signin">登陆</string>
+    <string name="login_register_link">注册</string>
+    <string name="title_activity_date_oper">DateOperActivity</string>
+    <string name="title_activity_slide">SlideActivity</string>
+    <string name="title_activity_net">NetActivity</string>
+
+    <array name="city_list">
+        <item>中国</item>
+        <item>美国</item>
+        <item>法国</item>
+        <item>英国</item>
+        <item>澳大利亚</item>
+    </array>
+
+    <string name="title_activity_chat">ChatActivity</string>
+    <string name="title_activity_user_list">UserListActivity</string>
+    <string name="title_activity_animation">AnimationActivity</string>
+    <string name="title_activity_ninght_menu">NinghtMenuActivity</string>
+    <string name="title_activity_tab_host">TabHostActivity</string>
+    <string name="title_activity_db_net">DbNetActivity</string>
+    <string name="title_activity_socket">SocketActivity</string>
+    <string name="title_activity_upload_file">UploadFileActivity</string>
+    <string name="title_activity_menus">股往今来</string>
+    <string name="title_activity_my_concern">自选股</string>
+    <string name="title_activity_industry">行业分类</string>
+    <string name="title_activity_explore">分时行情</string>
+    <string name="title_activity_search">检索</string>
+    <string name="title_activity_fix_header">固定列测试</string>
+    <string name="title_activity_hvlist_view">HVListView</string>
+    <string name="title_activity_qutoes">分钟行情</string>
+    <string name="title_activity_today_zd">TodayZdActivity</string>
+    <string name="title_activity_line_view">LineViewActivity</string>
+    <string name="title_activity_line_view_activity1">LineViewActivity1</string>
+    <string name="title_activity_line_test">LineTestActivity</string>
+
+</resources>

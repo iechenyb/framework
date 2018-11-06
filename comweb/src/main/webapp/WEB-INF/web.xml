@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://java.sun.com/xml/ns/javaee" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+version="2.5">
+  <welcome-file-list>
+    <welcome-file>login/login.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 加载所有的配置文件 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext*.xml,classpath:spring-security.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>com.cyb.web.listener.WebListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.cyb.servlet.ServletWork</listener-class>
+	</listener>
+	<!-- 配置Spring监听org.springframework.web.context.ContextLoaderListener -->
+	<listener>
+		<listener-class>com.cyb.web.listener.IechenybContextLoaderListener</listener-class>
+	</listener>
+    <!-- 配置字符集 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+    <!-- 配置SpringMVC -->
+	<servlet>
+		<servlet-name>springMVC</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-mvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>BlockingServlet</display-name>
+		<servlet-name>BlockingServlet</servlet-name>
+		<servlet-class>com.cyb.servlet.BlockingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springMVC</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<!-- <servlet-mapping>
+		<servlet-name>springMVC</servlet-name>
+		<url-pattern>*.json</url-pattern>
+	</servlet-mapping> -->
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+	<filter-name>hibernateFilter</filter-name>   
+     <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter </filter-class>   
+	</filter>
+	<filter>
+		<description>
+		</description>
+		<display-name>LoginFilter</display-name>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>com.cyb.web.filter.LoginFilter</filter-class>
+	</filter>   
+	<filter-mapping>   
+	     <filter-name>hibernateFilter</filter-name>   
+	     <url-pattern>*.do</url-pattern>   
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>  
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>  
+	<!--  -->
+	<!-- 权限  Spring Security3.1 的权限过滤-->
+    <!-- <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>
+            org.springframework.web.filter.DelegatingFilterProxy
+        </filter-class>
+     </filter>
+     <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>  -->
+	<!--  -->
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+  <!-- 配置错误页面 -->
+	<error-page>
+		<error-code>403</error-code>
+		<location>/exception/403.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/exception/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/exception/500.jsp</location>
+	</error-page>
+	<error-page>
+		<exception-type>org.hibernate.ObjectNotFoundException</exception-type>
+		<location>/exception/404.jsp</location>
+	</error-page>
+	<!-- <servlet-mapping>  
+	   <url-pattern>*.js</url-pattern> 
+	   <url-pattern>*.css</url-pattern>  
+	   <url-pattern>*.jpg</url-pattern>  
+	   <url-pattern>*.png</url-pattern> 
+	   <url-pattern>*.gif</url-pattern> 
+	   <url-pattern>*.ttf</url-pattern> 
+	   <url-pattern>*.woff2</url-pattern> 
+	   <url-pattern>*.swf</url-pattern> 
+	   <url-pattern>*.html</url-pattern> 
+	   <url-pattern>*.json</url-pattern> 
+	 </servlet-mapping> -->
+	<!-- <servlet-mapping>
+		<servlet-name>BlockingServlet</servlet-name>
+		<url-pattern>/BlockingServlet</url-pattern>
+	</servlet-mapping> -->
+	<filter>
+	    <filter-name>CORS</filter-name>
+	    <filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class>
+	    <init-param>
+            <param-name>cors.allowOrigin</param-name>
+            <param-value>*</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cors.supportedMethods</param-name>
+            <param-value>GET,POST,HEAD,PUT,DELETE</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cors.supportedHeaders</param-name>
+            <param-value>Accept,Origin,X-Requested-With,Content-Type,Last-Modified</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cors.exposedHeaders</param-name>
+            <param-value>Set-Cookie</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cors.supportsCredentials</param-name>
+            <param-value>true</param-value>
+        </init-param>
+	</filter>
+	<filter>
+		<description>
+		</description>
+		<display-name>CorsFilter</display-name>
+		<filter-name>CorsFilter</filter-name>
+		<filter-class>com.cyb.web.filter.CorsFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>CORS</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CorsFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 使用H2控制台的Servlet H2控制台是一个独立的应用程序，包括它自己的Web服务器，但它可以作为一个servlet作为-->  
+    <servlet>  
+        <servlet-name>H2Console</servlet-name>  
+        <servlet-class>org.h2.server.web.WebServlet</servlet-class>  
+         <init-param>  
+            <param-name>webAllowOthers</param-name>  
+            <param-value></param-value>  
+        </init-param>  
+        <init-param>  
+            <param-name>trace</param-name>  
+            <param-value></param-value>  
+        </init-param>  
+        <load-on-startup>1</load-on-startup>  
+    </servlet>  
+    <!-- 映射H2控制台的访问路径 -->  
+    <servlet-mapping>  
+        <servlet-name>H2Console</servlet-name>  
+        <url-pattern>/console/*</url-pattern>  
+    </servlet-mapping>  
+</web-app>

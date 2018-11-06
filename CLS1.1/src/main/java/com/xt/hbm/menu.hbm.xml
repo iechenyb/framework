@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<!DOCTYPE hibernate-mapping PUBLIC   
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+ <!-- http://www.cnblogs.com/yigerendehaibian/archive/2013/05/25/3099042.html mysql乱码问题 -->     
+<hibernate-mapping package="com.xt.cdgl.po">  
+<class name="SysMenu" table="sys_menu">  
+    <id name="menuId" type="java.lang.String" column="menuid">  
+       <generator class="uuid.hex" />  
+    </id>  
+   <property  
+        name="menuName"  
+        type="java.lang.String"  
+        column="menuname"  
+        length="50"  
+    />  
+   <property  
+        name="parentId"  
+        type="java.lang.String"  
+        column="parentid"  
+        length="50"  
+    />  
+    <property  
+        name="parentBs"  
+        type="java.lang.String"  
+        column="parentbs"  
+        length="100"  
+    />
+     <property  
+        name="url"  
+        type="java.lang.String"  
+        column="url"  
+        length="200"  
+    />  
+     <property  
+        name="path"  
+        type="java.lang.String"  
+        column="path"  
+        length="100"  
+    />  
+      <property  
+        name="level"  
+        type="java.lang.Integer"  
+        column="level"  
+        length="1"  
+    />  
+     <property  
+        name="rank"  
+        type="java.lang.Integer"  
+        column="rank"  
+        length="1"  
+    />  
+    <property  
+        name="isLeaf"  
+        type="java.lang.Integer"  
+        column="isleaf"  
+        length="1"  
+    />  
+     <property  
+        name="createTime"  
+        type="java.lang.String"  
+        column="createtime"  
+        length="14"  
+    />   
+    <property  
+        name="menuBs"  
+        type="java.lang.String"  
+        column="menubs"  
+        length="100"  
+    />
+    <property  
+        name="bz"  
+        type="java.lang.String"  
+        column="bz"  
+        length="500"  
+    />
+</class>  
+
+<!-- <query name="getPDAsByStationId">  
+    from PDA c  
+    where c.stationId = :stationId  
+</query>  
+<query name="getRecordCountByPDANo">  
+    select count(*) as recordCount from PDA c  
+    where c.pdaNo = :pdaNo  
+</query>  
+<query name="deletePDAsByStationId">  
+    delete from PDA c  
+    where c.stationId = :stationId  
+</query>   -->
+</hibernate-mapping>  

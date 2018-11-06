@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<!DOCTYPE hibernate-mapping PUBLIC   
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+ <!-- http://www.cnblogs.com/yigerendehaibian/archive/2013/05/25/3099042.html mysql乱码问题 -->     
+<hibernate-mapping package="com.xt.yhgl.po">  
+<class name="User" table="usr">  
+    <id name="id" type="java.lang.String" column="id">  
+       <generator class="uuid.hex" />  
+    </id>  
+   <property  
+        name="username"  
+        type="java.lang.String"  
+        column="username"  
+        length="100"  
+    />  
+   <property  
+        name="password"  
+        type="java.lang.String"  
+        column="password"  
+        length="60"  
+    />  
+    <property  
+        name="sex"  
+        type="java.lang.Integer"  
+        column="sex"  
+        length="2"  
+    />
+     <property  
+        name="age"  
+        type="java.lang.Integer"  
+        column="age"  
+        length="3"  
+    />  
+     <property  
+        name="status"  
+        type="java.lang.Integer"  
+        column="status"  
+        length="2"  
+    />  
+      <property  
+        name="email"  
+        type="java.lang.String"  
+        column="email"  
+        length="100"  
+    />  
+     <property  
+        name="telphone"  
+        type="java.lang.String"  
+        column="telphone"  
+        length="50"  
+    />  
+    <property  
+        name="mobphone"  
+        type="java.lang.String"  
+        column="mobphone"  
+        length="11"  
+    />  
+     <property  
+        name="createTime"  
+        type="java.lang.String"  
+        column="createtime"  
+        length="14"  
+    />   
+    <property  
+        name="address"  
+        type="java.lang.String"  
+        column="address"  
+        length="200"  
+    />
+    <property  
+        name="degree"  
+        type="java.lang.Integer"  
+        column="degree"  
+        length="2"  
+    />
+</class>  
+
+<!-- <query name="getPDAsByStationId">  
+    from PDA c  
+    where c.stationId = :stationId  
+</query>  
+<query name="getRecordCountByPDANo">  
+    select count(*) as recordCount from PDA c  
+    where c.pdaNo = :pdaNo  
+</query>  
+<query name="deletePDAsByStationId">  
+    delete from PDA c  
+    where c.stationId = :stationId  
+</query>   -->
+</hibernate-mapping>  

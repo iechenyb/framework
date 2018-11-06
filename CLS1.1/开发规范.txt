@@ -1,0 +1,10 @@
+每个子功能独立建立一套目录结构，比如菜单管理系统，需要建立：controller,dao,dao.impl,service.service.impl,方便系统后期的可伸缩性，易维护性。
+
+controller为页面请求层，通过springmvc的请求字符串响应；
+service为业务逻辑层
+dao 数据访问层
+其中功访问顺序：jsp或者html->controller->service->dao->database;
+
+现可以访问和参考的url有
+http://ip:port/CLS/user/json.cs 返回json数据
+http://ip:port/CLS/user/jsp.cs //返回带有参数的页面

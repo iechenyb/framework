@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:background="#eeffcc"
+    android:layout_width="wrap_content" android:layout_height="fill_parent">
+    <include layout="@layout/item" />
+    <com.cyb.gwjl.HVListView 
+        android:id="@android:id/list"
+        android:background="#FFB84D" 
+        android:fastScrollEnabled="true"
+        android:fadingEdgeLength="0.0sp" 
+        android:layout_width="1400.0dip"
+        android:layout_height="fill_parent" 
+        android:drawSelectorOnTop="false"
+        android:cacheColorHint="@null" 
+        android:dividerHeight="1.0dip">
+    </com.cyb.gwjl.HVListView>
+</LinearLayout>

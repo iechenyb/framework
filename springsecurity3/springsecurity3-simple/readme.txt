@@ -1,0 +1,1 @@
+纯springsecurity，没有继承cas并且是非boot项目

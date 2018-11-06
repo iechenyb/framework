@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".SocketActivity" >
+        <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开启服务" />
+            <Button
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关闭服务" />
+    <Button
+        android:id="@+id/btnSocket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="客户端1" />
+     <Button
+        android:id="@+id/btnSocket2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="客户端2" />
+      <Button
+        android:id="@+id/btnSocket3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="客户端3" />
+       <Button
+        android:id="@+id/btnSocket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="connect to socekserver ...." />
+     <TextView
+        android:id="@+id/inforSocket"
+        android:layout_below="@+id/btnSocket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="the msg  from server is waitting ....  " />
+</LinearLayout>

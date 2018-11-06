@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cyb.gwjl"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 检查网络类型的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.cyb.activity.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.cyb.activity.WelcomeMenuActivity"
+            android:label="@string/title_activity_user_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name="com.cyb.activity.DateOperActivity"
+            android:label="@string/title_activity_date_oper" >
+        </activity>
+        <activity
+            android:name="com.cyb.activity.SlideActivity"
+            android:label="@string/title_activity_slide" >
+        </activity>
+        <activity
+            android:name="com.cyb.db.net.NetActivity"
+            android:label="@string/title_activity_net" >
+        </activity>
+        <activity
+            android:name="com.cyb.activity.ChatActivity"
+            android:label="@string/title_activity_chat" >
+        </activity>
+        <activity
+            android:name="com.cyb.activity.UserListActivity"
+            android:label="@string/title_activity_user_list" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.AnimationActivity"
+            android:label="@string/title_activity_animation" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.NinghtMenuActivity"
+            android:label="@string/title_activity_ninght_menu" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.TabHostActivity"
+            android:label="@string/title_activity_tab_host" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.DbNetActivity"
+            android:label="@string/title_activity_db_net" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.SocketActivity"
+            android:label="@string/title_activity_socket" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.UploadFileActivity"
+            android:label="@string/title_activity_upload_file" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.MenusActivity"
+            android:label="@string/title_activity_menus" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.MyConcernActivity"
+            android:label="@string/title_activity_my_concern" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.IndustryActivity"
+            android:label="@string/title_activity_industry" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.ExploreActivity"
+            android:label="@string/title_activity_explore" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.SearchActivity"
+            android:label="@string/title_activity_search" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.FixHeaderActivity"
+            android:label="@string/title_activity_fix_header" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.HVListView"
+            android:label="@string/title_activity_hvlist_view" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.QutoesActivity"
+            android:label="@string/title_activity_qutoes" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.TodayZdActivity"
+            android:label="@string/title_activity_today_zd" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.LineView"
+            android:label="@string/title_activity_line_view" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.LineView1"
+            android:label="@string/title_activity_line_view_activity1" >
+        </activity>
+        <activity
+            android:name="com.cyb.gwjl.LineTestActivity"
+            android:label="@string/title_activity_line_test" >
+        </activity>
+    </application>
+
+</manifest>
